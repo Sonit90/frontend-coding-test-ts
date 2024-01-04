@@ -1,0 +1,12 @@
+query getHistories {
+  histories{
+    id,
+    title,
+    details,
+    event_date_unix,
+    links {
+      article
+      wikipedia
+    }
+  }
+}

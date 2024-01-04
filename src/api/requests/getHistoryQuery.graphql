@@ -1,0 +1,12 @@
+query getHistory ($id: ID!) {
+  history (id: $id){
+    id,
+    title,
+    details,
+    event_date_unix,
+    links {
+      article
+      wikipedia
+    }
+  }
+}
