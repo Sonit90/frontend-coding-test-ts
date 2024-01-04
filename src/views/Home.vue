@@ -32,7 +32,7 @@
               (e.g.
               <a
                 class="text-blue-600 hover:text-blue-800 cursor-pointer"
-                href="https://api.spacex.land/graphql/"
+                href="https://github.com/apollographql/spacex"
                 target="_blank"
                 >SpaceX-API</a
               >)
