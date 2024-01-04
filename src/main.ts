@@ -3,12 +3,17 @@ import { DefaultApolloClient } from '@vue/apollo-composable'
 import './styles/main.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
+import {
+  faArrowUpRightFromSquare,
+  faSpinner,
+  faArrowLeft,
+  faXmark,
+} from '@fortawesome/free-solid-svg-icons'
 import App from './App.vue'
 import apolloClient from './api/client/apiClient'
 import initializeRouter from './router'
 
-library.add(faArrowUpRightFromSquare)
+library.add(faArrowUpRightFromSquare, faSpinner, faArrowLeft, faXmark)
 
 const app = createApp({
   setup() {

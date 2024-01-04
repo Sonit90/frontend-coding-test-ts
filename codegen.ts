@@ -9,6 +9,7 @@ const config: CodegenConfig = {
     './src/api/__generated__/graphql.ts': {
       config: {
         useTypeImports: true,
+        vueCompositionApiImportFrom: 'vue',
         skipTypename: true,
       },
       plugins: ['typescript', 'typescript-operations', 'typescript-vue-apollo'],

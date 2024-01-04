@@ -15,6 +15,7 @@ module.exports = {
     '@vue/typescript/recommended',
     'prettier',
   ],
+  "ignorePatterns": ["src/api/__generated__/*.ts"],
   rules: {
     'vue/script-setup-uses-vars': 'error',
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
@@ -75,7 +76,7 @@ module.exports = {
       },
       alias: {
         map: [
-          ['@', './src'],
+          ['@src', './src'],
           ['@api', './src/api'],
         ],
       },

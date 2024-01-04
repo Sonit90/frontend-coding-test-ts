@@ -17,6 +17,7 @@ const httpLink = createHttpLink({
 const { addNotification } = useNotifications()
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors)
+    // eslint-disable-next-line array-callback-return
     graphQLErrors.map(({ message, locations, path }) => {
       console.log(
         `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`,
