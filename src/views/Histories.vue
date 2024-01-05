@@ -25,7 +25,7 @@
         />
       </template>
     </template>
-    <template v-else> There are no histories, yet :( </template>
+    <template v-else> There are no histories yet :( </template>
   </div>
 </template>
 <script setup lang="ts">

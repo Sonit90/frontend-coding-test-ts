@@ -1,7 +1,12 @@
 <template>
   <div class="rounded-md p-2 shadow-sm border-2 w-[300px]">
     <div class="flex items-start gap-2 p-2 border-b">
-      <router-link v-bind:to="`/histories/${history.id}`">
+      <h3
+        v-if="disableLink"
+        class="font-bold tracking-tigh text-xl leading-2"
+        v-text="history.title"
+      />
+      <router-link v-else v-bind:to="`/histories/${history.id}`">
         <h3
           class="font-bold tracking-tigh text-xl leading-2"
           v-text="history.title"
@@ -29,7 +34,12 @@ import { format } from 'date-fns'
 import { History } from '@api/__generated__/graphql.ts'
 import { computed } from 'vue'
 
-const props = defineProps<{ history: History }>()
+const props = withDefaults(
+  defineProps<{ history: History; disableLink?: boolean }>(),
+  {
+    disableLink: false,
+  },
+)
 
 const date = computed(() =>
   format(new Date(props.history.event_date_unix * 1000), 'dd.MM.yyyy'),

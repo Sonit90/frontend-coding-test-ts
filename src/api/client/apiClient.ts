@@ -16,7 +16,7 @@ const httpLink = createHttpLink({
 
 const { addNotification } = useNotifications()
 const errorLink = onError(({ graphQLErrors, networkError }) => {
-  if (graphQLErrors)
+  if (graphQLErrors) {
     // eslint-disable-next-line array-callback-return
     graphQLErrors.map(({ message, locations, path }) => {
       console.log(
@@ -31,8 +31,18 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
         { timeout: 0 },
       )
     })
+  }
 
-  if (networkError) console.log(`[Network error]: ${networkError}`)
+  if (networkError) {
+    addNotification(
+      {
+        type: NotificationType.Warning,
+        message: `[Network error]: ${networkError}`,
+      },
+      { timeout: 0 },
+    )
+    console.error(`[Network error]: ${networkError}`)
+  }
 })
 
 // Cache implementation

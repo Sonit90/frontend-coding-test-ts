@@ -18,7 +18,7 @@
 
     <div v-else-if="result?.history" class="flex gap-4 flex-col">
       <h1 class="font-extrabold tracking-tigh text-3xl leading-10">History:</h1>
-      <HistoryCard v-bind:history="result?.history" />
+      <HistoryCard disable-link v-bind:history="result?.history" />
     </div>
   </div>
 </template>

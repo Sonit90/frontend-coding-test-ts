@@ -42,13 +42,8 @@ module.exports = {
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': 'off',
 
-    // Disable the following rule, because it's not relevant for the tool chain and test envoirment.
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: ['tailwind.config.js', 'vite.config.ts'],
-      },
-    ],
+    // Disable the following rule, because it's not relevant for the tool chain and test environment.
+    'import/no-extraneous-dependencies': 'off',
 
     'vue/component-tags-order': [
       'error',
@@ -68,7 +63,14 @@ module.exports = {
 
     'vue/multi-word-component-names': 'off',
   },
-  overrides: [],
+  overrides: [
+    {
+      "files": ["*.spec.ts"],
+      "rules": {
+        "no-unused-expressions": "off"
+      }
+    }
+  ],
   settings: {
     'import/resolver': {
       node: {

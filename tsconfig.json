@@ -14,11 +14,21 @@
     "noEmit": true,
     "paths": {
       "@src/*": ["./src/*"],
-      "@api/*": ["./src/api/*"],
+      "@api/*": ["./src/api/*"]
     },
-    "lib": ["esnext", "dom"]
+    "lib": ["esnext", "dom"],
+    "types": ["vitest/globals"]
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/**/*.spec.ts",
+    "tests/**/*.ts",
+    "vitest-setup.ts",
+    "node_modules/vitest/globals.d.ts",
+  ],
   "exclude": ["node_modules", "public"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
